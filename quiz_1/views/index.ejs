@@ -1,0 +1,25 @@
+<%- include("./partials/header") %>
+
+<h1>All clucks</h1>
+
+
+<% clucks.forEach(cluck => { %>
+  <div class="card" style="width: 18rem;">
+  <img src="<%= cluck.img_url %>" class="card-img-top" alt="<%= cluck.username %>'s cluck">
+  <div class="card-body">
+    <h5 class="card-title"><%= cluck.content %></h5>
+    <p class="card-text"><%= cluck.username %> • <%= friendlyDate(cluck.createdAt, cluck.updatedAt) %></p>
+    <div class="d-flex">
+      <a href="/clucks/<%= cluck.id %>" class="btn btn-primary mr-2">Show</a>
+      <form action="/clucks/<%= cluck.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input type="submit" class="btn btn-danger" value="Delete" />
+      </form>
+    </div>
+  </div>
+  </div>
+<% }) %>
+
+<%- include("./partials/footer") %>
+
+

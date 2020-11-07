@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cluckr</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/stylesheets/main.css"/>
+</head>
+<body> 
+  
+  <nav class="navbar navbar-light bg-dark">
+    <img id='chicken'src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGKxatwNrszCoUnvI9-soXx8B4jmo8ZMDj_Q&usqp=CAU" class="ola">
+    <form class="form-inline">
+      <button class="btn btn-primary mx-2" type="button">
+        <a class="nav-link" href="/">Home</a>
+        </button>
+      <button class="btn btn-primary mx-2" type="button">
+        <a class="nav-link" href="/clucks">clucks</a>
+      </button>
+      <button class="btn btn-success mx-2" type="button">
+        <a class="nav-link" href="/clucks/new">New</a>
+      </button>
+    </form>
+    <div>
+
+    <% if (username) { %>
+    <div class="d-flex">
+      <span class="navbar-text mr-2" id="username">
+        Logged in as: <%= username %>
+      </span>
+      <form action="/sign_out" method="POST">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input type="submit" class="btn btn-danger" value="Sign Out" />
+      </form>
+    </div>
+    <% } else { %>
+      <a href="/sign_in" class="btn btn-success nav-link">Sign In</a>
+      <% } %>
+    </div>
+
+  </nav>
+  <div class="container">
