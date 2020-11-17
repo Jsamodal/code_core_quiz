@@ -1,9 +1,19 @@
-a.nav-link, #username {
-    font-weight: bolder;
-    color: black;
-  }
+h1 {
+    color: white
+}
 
+body {
+    background-color: black;
+}
 
-  #chicken {
-      size: 100px;
-  }
+nav {
+    color:white
+}
+
+button {
+    color : grey
+}
+a {
+    color: black
+}
+

@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
         clucks.username = username 
 
       knex("clucks")
-        .insert(clucks, "*")
+        .insert([clucks])
         .then(clucks => {
           res.redirect("/clucks")
         })

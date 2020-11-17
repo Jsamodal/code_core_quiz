@@ -5,15 +5,14 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      filename: './dev.sqlite3',
-      databse:"clucks_development"
+      database:"clucks"
     },
-  migrations: {
+    migrations: {
       tableName: 'knex_migrations',
       directory: "./db/migrations"
-    },
- 
 
-  }
-  
+    }
+  },
+
+
 };
